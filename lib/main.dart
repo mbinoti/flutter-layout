@@ -1,20 +1,29 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_layout/widget/mediaquery_demo.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(DevicePreview(builder: (_) {
+    return const MyApp();
+  }));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      // color: Colors.amber,
+
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        // backgroundColor: Colors.amber,
+        body: SafeArea(
+          child: myFittedBox(context),
         ),
       ),
+      builder: DevicePreview.appBuilder,
+      locale: DevicePreview.locale(context),
     );
   }
 }
