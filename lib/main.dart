@@ -1,18 +1,10 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_layout/widget/mediaquery_demo.dart';
-
-import 'widget/shooping_item.dart';
+import 'package:flutter_layout/widget/demos.dart';
 
 void main() {
-  runApp(
-    DevicePreview(
-      enabled: false,
-      builder: (_) {
-        return const MyApp();
-      },
-    ),
-  );
+  // runApp(DevicePreview(builder: (_) => const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,17 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // color: Colors.amber,
-      home: Scaffold(
-        // backgroundColor: Colors.amber,
-        body: myAnimatedContainer(
-          context,
-          ShoppingItem(title: 'title', description: 'description 1'),
+    return SafeArea(
+      child: MaterialApp(
+        // color: Colors.amber,
+        home: Scaffold(
+          // backgroundColor: Colors.amber,
+          body: MeuApp(),
         ),
+        // builder: DevicePreview.appBuilder,
+        // locale: DevicePreview.locale(context),
       ),
-      builder: DevicePreview.appBuilder,
-      locale: DevicePreview.locale(context),
     );
   }
 }

@@ -125,7 +125,7 @@ Widget myContainerAlign(BuildContext context) {
     child: Container(
       width: 100,
       height: 100,
-      color: Colors.blue,
+      color: Colors.green,
     ),
   );
 }
@@ -250,6 +250,21 @@ Widget myFittedBox1(BuildContext context) {
           Image.asset("assets/img1.jpeg"),
         ],
       ),
+    ),
+  );
+}
+
+Widget myFittedBox2(BuildContext context) {
+  return FittedBox(
+    child: Row(
+      children: [
+        Container(
+          color: Colors.green,
+          height: 300,
+          width: 300,
+        ),
+        Image.asset("assets/img1.jpeg"),
+      ],
     ),
   );
 }
@@ -475,6 +490,21 @@ Widget myAnimatedContainer(BuildContext context, ShoppingItem item) {
             ],
           ),
         ),
+      ),
+    ),
+  );
+}
+
+Widget myOverflowBox(BuildContext context) {
+  return Container(
+    color: Colors.red,
+    child: OverflowBox(
+      maxHeight: 200,
+      maxWidth: 200,
+      child: Container(
+        color: Colors.blue,
+        width: 300,
+        height: 300,
       ),
     ),
   );
